@@ -6,6 +6,7 @@ https://gist.github.com/codeSTACKr/53fd03c7f75d40d07797b8e4e47d78ec?permalink_co
 2. Cheat sheet
 https://www.interviewbit.com/mongodb-cheat-sheet/?fbclid=IwAR1F3Ozw8uQWuexDc0gkqLpAjxy5diyHdYaNCRRJ5zZrDBouW-aUR2jylWA
 
+Download and installation
 3.https://www.mongodb.com/try/download/database-tools?fbclid=IwAR38WlfmtsXwxuu6xHq56BtRow5Rp5iXH319YfrCZHVwPKD79MM-qIb_ULQ
 
 4. https://www.mongodb.com/products/shell?fbclid=IwAR2sI0kbw-GhQAm8Mr0Fermn76INt_4wama-wKwxDkoKOy2mrid_AYIE37k
@@ -18,7 +19,7 @@ https://www.interviewbit.com/mongodb-cheat-sheet/?fbclid=IwAR1F3Ozw8uQWuexDc0gkq
 
 /**
 Important Commands
-1. Check mongosdb Version
+1. Check mongodb Version
 db.version()
 
 2. Show Current Database
