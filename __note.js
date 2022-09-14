@@ -18,8 +18,8 @@ https://www.interviewbit.com/mongodb-cheat-sheet/?fbclid=IwAR1F3Ozw8uQWuexDc0gkq
 
 /**
 Important Commands
-1. Check monosh Version
-mongosh --version
+1. Check mongosdb Version
+db.version()
 
 2.start the Mongo Shell
 mongosh "YOUR_CONNECTION_STRING" --username YOUR_USER_NAME
