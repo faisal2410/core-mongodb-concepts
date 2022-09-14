@@ -21,28 +21,25 @@ Important Commands
 1. Check mongosdb Version
 db.version()
 
-2.start the Mongo Shell
-mongosh "YOUR_CONNECTION_STRING" --username YOUR_USER_NAME
-
-3. Show Current Database
+2. Show Current Database
 db
 
-4. Show All Databases
+3. Show All Databases
 show dbs
 
-5. Create Or Switch Database
+4. Create Or Switch Database
 use blog
 
-6. Drop Database
+5. Drop Database
 db.dropDatabase()
 
-7. Create Collection
+6. Create Collection
 db.createCollection('posts')
 
-8. Show Collections
+7. Show Collections
 show collections
 
-9.Insert Document
+8.Insert Document
 db.posts.insertOne({
   title: 'Post 1',
   body: 'Body of post.',
@@ -52,7 +49,7 @@ db.posts.insertOne({
   date: Date()
 })
 
-10.Insert Multiple Documents
+9.Insert Multiple Documents
 db.posts.insertMany([
   {
     title: 'Post 2',
@@ -88,33 +85,33 @@ db.posts.insertMany([
   }
 ])
 
-11.Find All Documents
+10.Find All Documents
 db.posts.find()
 
-12. Find Documents with Query
+11. Find Documents with Query
 db.posts.find({ category: 'News' })
 
-13.Sort Documents
+12.Sort Documents
 Ascending
 db.posts.find().sort({ title: 1 })
 
 Descending
 db.posts.find().sort({ title: -1 })
 
-14.Count Documents
+13.Count Documents
 db.posts.find().count()
 db.posts.find({ category: 'news' }).count()
 
-15.Limit Documents
+14.Limit Documents
 db.posts.find().limit(2)
 
-16.Chaining
+15.Chaining
 db.posts.find().limit(2).sort({ title: 1 })
 
-17.Find One Document
+16.Find One Document
 db.posts.findOne({ likes: { $gt: 3 } })
 
-18.Update Document
+17.Update Document
 db.posts.updateOne({ title: 'Post 1' },
 {
   $set: {
@@ -122,7 +119,7 @@ db.posts.updateOne({ title: 'Post 1' },
   }
 })
 
-19.Update Document or Insert if not Found
+18.Update Document or Insert if not Found
 db.posts.updateOne({ title: 'Post 6' },
 {
   $set: {
@@ -135,7 +132,7 @@ db.posts.updateOne({ title: 'Post 6' },
   upsert: true
 })
 
-20.Increment Field ($inc)
+19.Increment Field ($inc)
 db.posts.updateOne({ title: 'Post 1' },
 {
   $inc: {
@@ -143,34 +140,30 @@ db.posts.updateOne({ title: 'Post 1' },
   }
 })
 
-21.Update Multiple Documents
+20.Update Multiple Documents
 db.posts.updateMany({}, {
   $inc: {
     likes: 1
   }
 })
 
-22.Rename Field
+21.Rename Field
 db.posts.updateOne({ title: 'Post 2' },
 {
   $rename: {
     likes: 'views'
   }
 })
-23. Delete a Document
+22. Delete a Document
 db.posts.deleteOne({ title: 'Post 6' })
 
-24.Delete Multiple Documents
+23.Delete Multiple Documents
 db.posts.deleteMany({ category: 'Tech' })
 
-25.Greater & Less Than
+24.Greater & Less Than
 db.posts.find({ views: { $gt: 2 } })
 db.posts.find({ views: { $gte: 7 } })
 db.posts.find({ views: { $lt: 7 } })
 db.posts.find({ views: { $lte: 7 } })
-
-
-
-
 
 */ 
