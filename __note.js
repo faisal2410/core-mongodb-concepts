@@ -14,6 +14,16 @@ Download and installation
 
 5.https://www.mongodb.com/try/download/community?fbclid=IwAR26sb4qNuaOsRnRGAcRcrOqkYtQ3ENue5npufCxfeBIEWEpVvS8dMf6PHc
 
+6. Mongosh Installation
+https://www.mongodb.com/docs/mongodb-shell/install/#std-label-mdb-shell-install
+
+6.  MongoDB Shell (mongosh) documentation
+https://www.mongodb.com/docs/mongodb-shell/
+7. Mongosh crud operation
+https://www.mongodb.com/docs/mongodb-shell/crud/#std-label-mdb-shell-crud
+8. For reading about Mongodb
+https://www.tutorialspoint.com/questions/category/mongodb
+
 
 */
 
@@ -90,7 +100,10 @@ db.posts.insertMany([
 db.posts.find()
 
 11. Find Documents with Query
-db.posts.find({ category: 'News' })
+const query={ category: 'News' }
+// const query={ category: 'News' }
+// db.posts.find(query)
+// db.posts.find({ category: 'News' })
 
 12.Sort Documents
 Ascending
@@ -110,15 +123,25 @@ db.posts.find().limit(2)
 db.posts.find().limit(2).sort({ title: 1 })
 
 16.Find One Document
+db.posts.findOne()
 db.posts.findOne({ likes: { $gt: 3 } })
 
 17.Update Document
 db.posts.updateOne({ title: 'Post 1' },
 {
   $set: {
-    category: 'Tech'
+    category: 'Tech',
+    likes:2
   }
 })
+// problem
+// db.posts.update({ title: 'Post 1' },
+// {
+//   $set: {
+//     category: 'sports',
+//     likes:2
+//   }
+// })
 
 18.Update Document or Insert if not Found
 db.posts.updateOne({ title: 'Post 6' },
@@ -144,7 +167,7 @@ db.posts.updateOne({ title: 'Post 1' },
 20.Update Multiple Documents
 db.posts.updateMany({}, {
   $inc: {
-    likes: 1
+    likes: 10
   }
 })
 
@@ -156,7 +179,7 @@ db.posts.updateOne({ title: 'Post 2' },
   }
 })
 22. Delete a Document
-db.posts.deleteOne({ title: 'Post 6' })
+db.posts.deleteOne({ title: 'Post 3' })
 
 23.Delete Multiple Documents
 db.posts.deleteMany({ category: 'Tech' })
@@ -168,3 +191,40 @@ db.posts.find({ views: { $lt: 7 } })
 db.posts.find({ views: { $lte: 7 } })
 
 */ 
+/**
+ * Master MongoDB Development for Web & Mobile Apps. CRUD Operations, Indexes, Aggregation Framework - All about MongoDB!- Udemy Course
+ * Academind by Maximilian Schwarzmüller
+ * 
+ * You can use printjson() method to print to console an object in a MongoDB script. The syntax is as follows −
+printjson({yourFieldName”:yourValue”,........N});
+ * 
+ * 1.db.posts.find().toArray().pretty()
+ * 2.db.posts.find().forEach(post=>printjson(post))
+ * 3.db.posts.find().forEach(post=>printjson(post.title))
+ * 4.db.posts.find().forEach(post=>printjson(`${post.title} is posted`))
+ * 
+ * 
+ * 5.printjson({"UserId":101,"UserName":"John","UserCoreSuject":["Java","MongoDB","MySQL","SQL Server"]});
+ * The following is the output −
+
+{
+   "UserId" : 101,
+   "UserName" : "John",
+   "UserCoreSuject" : [
+      "Java",
+      "MongoDB",
+      "MySQL",
+      "SQL Server"
+   ]
+}
+ * 
+
+You can use another query −
+
+> print ( JSON.stringify( {"UserId":101,"UserName":"John","UserCoreSuject":["Java","MongoDB","MySQL","SQL Server"]} ));
+The following is the output −
+
+{"UserId":101,"UserName":"John","UserCoreSuject":["Java","MongoDB","MySQL","
+ * 
+ * 
+ * */ 
