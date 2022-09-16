@@ -23,6 +23,13 @@ https://www.mongodb.com/docs/mongodb-shell/
 https://www.mongodb.com/docs/mongodb-shell/crud/#std-label-mdb-shell-crud
 8. For reading about Mongodb
 https://www.tutorialspoint.com/questions/category/mongodb
+9. Mongodb docs driver
+https://www.mongodb.com/docs/mongodb-shell/crud/#std-label-mdb-shell-crud
+10. Mongodb getting started
+https://www.mongodb.com/docs/manual/tutorial/getting-started/
+11. Mongodb methods
+https://www.mongodb.com/docs/mongodb-shell/reference/methods/
+
 
 
 */
@@ -60,6 +67,7 @@ db.posts.insertOne({
   date: Date()
 })
 
+
 9.Insert Multiple Documents
 db.posts.insertMany([
   {
@@ -95,6 +103,7 @@ db.posts.insertMany([
     date: Date()
   }
 ])
+db.posts.insertMany([{},{},{}],{ordered:false}) // Note: data inserted though there are some errors in in individual data
 
 10.Find All Documents
 db.posts.find()
@@ -190,7 +199,7 @@ db.posts.find({ views: { $gte: 7 } })
 db.posts.find({ views: { $lt: 7 } })
 db.posts.find({ views: { $lte: 7 } })
 
-*/ 
+*/
 /**
  * Master MongoDB Development for Web & Mobile Apps. CRUD Operations, Indexes, Aggregation Framework - All about MongoDB!- Udemy Course
  * Academind by Maximilian Schwarzmüller
@@ -225,6 +234,27 @@ You can use another query −
 The following is the output −
 
 {"UserId":101,"UserName":"John","UserCoreSuject":["Java","MongoDB","MySQL","
+ * 
+ * 
+ * */
+
+/**
+ * Accessing structured data
+ * db.flightdata.find({"status.description":"on-time"}).pretty()
+ * db.flightdata.find({"status.details.responsible":"Max Schwarzmilar"})
+ * 
+*/
+
+/**
+ * Import Data to database
+ * Steps:
+ * 1. exit from mongosh
+ * 2.open gitbash where the json file located
+ * 3. mongoimport tv-shows.json -d tvshows -c movies --jsonArray --drop // this will import tv-shows.json file to movies collection in the tvshows database 
+ * 
+ * mongoimport -d cars -c carList --drop --jsonArray
+ * 
+ * 
  * 
  * 
  * */ 
