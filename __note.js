@@ -29,7 +29,8 @@ https://www.mongodb.com/docs/mongodb-shell/crud/#std-label-mdb-shell-crud
 https://www.mongodb.com/docs/manual/tutorial/getting-started/
 11. Mongodb methods
 https://www.mongodb.com/docs/mongodb-shell/reference/methods/
-
+12. Mongo Import
+https://www.mongodb.com/docs/database-tools/mongoimport/
 
 
 */
